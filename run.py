@@ -18,14 +18,14 @@ dbmgr = db.DatabaseManager("dev.db")
 
 date_today = dt.datetime(2017,6,19,14,0,0)
 
-date_t = date_today.strftime('%Y-%m-%d %H:%M:%S')
+date_t = date_today.strftime('%Y-%m-%d %H:%M:%S.000')
 date_t_24 = (date_today - dt.timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')
 date_t_7 = (date_today - dt.timedelta(days=7)).strftime('%Y-%m-%d %H:%M:%S')
 date_t_30 = (date_today - dt.timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S')
 history_dates = [date_t,date_t_24,date_t_7,date_t_30]
 history_dates = sorted(history_dates,reverse=True)
 
-x = bcCalc.calc('isin/US0394831020',42,date_t,history_dates)
+x = bcCalc.main('isin/US0394831020',42,date_t,history_dates)
 
 
 #dbmgr.print_table("sqlite_master", "*", constraint="type='table' and name = 'Alert_History'")
