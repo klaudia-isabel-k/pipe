@@ -4,15 +4,19 @@ import numpy as np
 import pandas as pd
 
 def calc_concat(security_history_values,s):
+    #Calculate the benchmark for a row in a dataframe
     s_add = pd.Series(calc_id_valuation(security_history_values,s), index=['alert_flag','today_calc','today_benchmark'])
+    #Merge the existing timeseries with new values
     s = s.append(s_add)
     return s
 
-def calc_id_valuation(security_history_values,df):
+def calc_id_valuation(security_history_values,s):
+    #Calculate today's benchmark fo appropriate calculation type
 
-    calc_id = df['calc_id']
-    period = df['period']
-    benchmark = df['benchmark']
+    #Assign values from series
+    calc_id = s['calc_id']
+    period = s['period']
+    benchmark = s['benchmark']
 
     # Calculation for % movement
     if calc_id == 1:
