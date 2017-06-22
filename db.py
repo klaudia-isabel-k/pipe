@@ -74,13 +74,15 @@ class DatabaseManager(object): ##Ignore the indentation##
         else:
             columns = ("id,"+column).split(",")
         if df.empty:
-            print('{} table is empty for specified constraint.'.format(table))
+            print('{} table is empty for specified constraint.'.format('Price_History'))
         else:
             df.columns = columns
         return df
 
-    def insert_table(self,table,values):
-        sql = "insert into {} values ({},'{}')".format(table,values,dt.datetime.today().strftime('%Y-%m-%d %H:%M:%S'))
+    def insert_table(self,table,values,insert_time=None):
+        if insert_time is None:
+            insert_time = dt.datetime.today().strftime('%Y-%m-%d %H:%M:%S.000')
+        sql = "insert into {} values ({},'{}')".format(table,values,insert_time)
         self.execute(sql)
 
     def delete_table(self,table, constraint=None):
