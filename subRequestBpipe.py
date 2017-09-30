@@ -82,7 +82,7 @@ def parseCmdLine():
                       dest="host",
                       help="Host address to connect to. (default: %default)",
                       metavar="<host>",
-                      default="bbg-gre-uat-mbpipe.lon.ib.commerzbank.com")
+                      default="bbg-gre-uat-mbpipe.lon.ib.bankobank.com")
     parser.add_option("-p",
                       "--port",
                       dest="port",
@@ -118,7 +118,7 @@ def parseCmdLine():
                       dest="authName",
                       help="The name of application or directory service",
                       metavar="<auth name>",
-                      default="COMMERZBANK:MarketAlert")
+                      default="bankobank:MA")
     parser.add_option("",
                       "--auth-dirSvc",
                       dest="authDirSvc",
