@@ -11,7 +11,7 @@ def main(subscribed_user,security,benchmark,calc_id,period,today_calc,today_benc
     else:
     
         # Send the message via our own SMTP server.
-        s = smtplib.SMTP('mailrelay.zit.commerzbank.com')
+        s = smtplib.SMTP('mailrelay.zit.cmbank.com')
 
         # Choose calculation label depending on the id
         if calc_id == 1:
@@ -32,7 +32,7 @@ def main(subscribed_user,security,benchmark,calc_id,period,today_calc,today_benc
         msg['Subject'] = 'MarketAlert: Movement in {} ({})'.format(security,calc)
 
         # Choose Sender's Email
-        msg['From'] = "MarketAlert@commerzbank.com"
+        msg['From'] = "MarketAlert@cmbank.com"
 
         # Choose Receiver's Email
         msg['To'] = subscribed_user
