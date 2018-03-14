@@ -1,8 +1,8 @@
-# commerzbank
+# cmbank
 
 
 /// SETTING PROXY /// ****************************
-Set https_proxy=https://[ga2kloc]: [Commerz2017]@pxvip10.intranet.commerzbank.com:8080
+Set https_proxy=https://[ga2kloc]: [cm2017]@pxvip10.intranet.cmbank.com:8080
 
 
 /// TESTING TELNET /// ***************************
